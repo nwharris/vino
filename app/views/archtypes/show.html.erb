@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @archtype.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @archtype.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_archtype_path(@archtype) %> |
+<%= link_to 'Back', archtypes_path %>

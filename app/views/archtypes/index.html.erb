@@ -1,0 +1,25 @@
+<h1>Listing archtypes</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @archtypes.each do |archtype| %>
+  <tr>
+    <td><%= archtype.name %></td>
+    <td><%= archtype.description %></td>
+    <td><%= link_to 'Show', archtype %></td>
+    <td><%= link_to 'Edit', edit_archtype_path(archtype) %></td>
+    <td><%= link_to 'Destroy', archtype, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Archtype', new_archtype_path %>
