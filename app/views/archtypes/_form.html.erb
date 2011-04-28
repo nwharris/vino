@@ -20,14 +20,12 @@
     <%= f.text_area :description %>
   </div>
   <h2>Type[s]</h2>
-  <div class="field">
-    <%= label :type, :name %><br />
-    <%= text_field :type, :name %>
-  </div>
-  <div class="field">
-    <%# label :type, :description %><br />
-    <%# text_area :type, :description %>
-  </div>
+<p class="fields">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.hidden_field :_destroy %>
+  <%= link_to_function "remove", "remove_fields(this)" %>
+</p>
   <div class="actions">
     <%= f.submit %>
   </div>

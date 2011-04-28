@@ -25,6 +25,7 @@ class ArchtypesController < ApplicationController
   # GET /archtypes/new.xml
   def new
     @archtype = Archtype.new
+    @type     = Type.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,15 +33,11 @@ class ArchtypesController < ApplicationController
     end
   end
 
-  # GET /archtypes/1/edit
-  def edit
-    @archtype = Archtype.find(params[:id])
-  end
-
   # POST /archtypes
   # POST /archtypes.xml
   def create
     @archtype = Archtype.new(params[:archtype])
+    @type     = @archtype.types.build(params[:type])
 
     respond_to do |format|
       if @archtype.save
@@ -51,6 +48,11 @@ class ArchtypesController < ApplicationController
         format.xml  { render :xml => @archtype.errors, :status => :unprocessable_entity }
       end
     end
+  end
+
+  # GET /archtypes/1/edit
+  def edit
+    @archtype = Archtype.find(params[:id])
   end
 
   # PUT /archtypes/1

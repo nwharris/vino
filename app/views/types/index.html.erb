@@ -1,25 +1,34 @@
 <h1>Listing Types</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="span-5">
+<p>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.
+<p>
+</div>
+<div class="span-19 last">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
 
-<% @types.each do |type| %>
-  <tr>
-    <td><%= type.name %></td>
-    <td><%= truncate type.description, :length => 50 %></td>
-    <td><%= link_to 'Show', type %></td>
-    <td><%= link_to 'Edit', edit_type_path(type) %></td>
-    <td><%= link_to 'Destroy', type, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+  <% @types.each do |type| %>
+    <tr>
+      <td><%= type.name %></td>
+      <td><%= truncate type.description, :length => 50 %></td>
+      <td><%= link_to 'Show', type %></td>
+      <td><%= link_to 'Edit', edit_type_path(type) %></td>
+      <td><%= link_to 'Destroy', type, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+  </table>
 
-<br />
+  <br />
 
-<%= link_to 'New Type', new_type_path %>
+</div>
+<div class="span-24">
+  <%= link_to 'New Type', new_type_path %>
+</div>
