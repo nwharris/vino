@@ -12,12 +12,25 @@
     <!--[if IE]>
       <%= stylesheet_link_tag 'blueprint/ie', :media => 'screen' %>
     <![endif]-->
+    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
   <!-- blueprint files end -->
 
 </head>
 <body>
   <div class="container showgrid"> <!-- blueprint container start (rm grid)-->
-    <%= yield %>
+    <header>
+      <%= image_tag("thumb.wine-logo.png", :alt => "Vino Logo", :class => "round") %>
+      <nav class="round">
+        <ul>
+          <li><%= link_to "Home", "#" %></li>
+          <li><%= link_to "Help", "#" %></li>
+          <li><%= link_to "Sign in", "#" %></li>
+        </ul>
+      </nav>
+    </header>
+    <section class="round">
+      <%= yield %>
+    </section>
   </div> <!-- blueprint container end-->
 </body>
 </html>
